@@ -6,5 +6,6 @@ namespace AddressBooklinq
 {
     class AddressBookManagement
     {
+
     }
 }

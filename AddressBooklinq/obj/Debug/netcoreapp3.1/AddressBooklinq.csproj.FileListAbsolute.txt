@@ -1,0 +1,13 @@
+C:\Users\User\source\repos\fileIO\LinqDay28\AddressBooklinq\AddressBooklinq\bin\Debug\netcoreapp3.1\AddressBooklinq.exe
+C:\Users\User\source\repos\fileIO\LinqDay28\AddressBooklinq\AddressBooklinq\bin\Debug\netcoreapp3.1\AddressBooklinq.deps.json
+C:\Users\User\source\repos\fileIO\LinqDay28\AddressBooklinq\AddressBooklinq\bin\Debug\netcoreapp3.1\AddressBooklinq.runtimeconfig.json
+C:\Users\User\source\repos\fileIO\LinqDay28\AddressBooklinq\AddressBooklinq\bin\Debug\netcoreapp3.1\AddressBooklinq.runtimeconfig.dev.json
+C:\Users\User\source\repos\fileIO\LinqDay28\AddressBooklinq\AddressBooklinq\bin\Debug\netcoreapp3.1\AddressBooklinq.dll
+C:\Users\User\source\repos\fileIO\LinqDay28\AddressBooklinq\AddressBooklinq\bin\Debug\netcoreapp3.1\AddressBooklinq.pdb
+C:\Users\User\source\repos\fileIO\LinqDay28\AddressBooklinq\AddressBooklinq\obj\Debug\netcoreapp3.1\AddressBooklinq.csprojAssemblyReference.cache
+C:\Users\User\source\repos\fileIO\LinqDay28\AddressBooklinq\AddressBooklinq\obj\Debug\netcoreapp3.1\AddressBooklinq.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\fileIO\LinqDay28\AddressBooklinq\AddressBooklinq\obj\Debug\netcoreapp3.1\AddressBooklinq.AssemblyInfo.cs
+C:\Users\User\source\repos\fileIO\LinqDay28\AddressBooklinq\AddressBooklinq\obj\Debug\netcoreapp3.1\AddressBooklinq.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\fileIO\LinqDay28\AddressBooklinq\AddressBooklinq\obj\Debug\netcoreapp3.1\AddressBooklinq.dll
+C:\Users\User\source\repos\fileIO\LinqDay28\AddressBooklinq\AddressBooklinq\obj\Debug\netcoreapp3.1\AddressBooklinq.pdb
+C:\Users\User\source\repos\fileIO\LinqDay28\AddressBooklinq\AddressBooklinq\obj\Debug\netcoreapp3.1\AddressBooklinq.genruntimeconfig.cache
