@@ -1,18 +1,42 @@
+using System.Data;
+using AddressBookLinq;
 using NUnit.Framework;
 
-namespace AddressBookDay28
+namespace NUnitTestProject
 {
-    public class Tests
+    public class AddressBookLinqTest
     {
+        AddressBookService addressBook;
         [SetUp]
         public void Setup()
         {
+            addressBook = new AddressBookService();
         }
 
         [Test]
-        public void Test1()
+        public void GivenTable_WhenChecked_ShouldRetunrTable()
         {
-            Assert.Pass();
+            DataTable result = addressBook.CreateAddressBookTable();
+            Assert.AreEqual(result.TableName, "AddressBook");
+        }
+
+        [Test]
+        public void GivenContact_WhenAdded_ShouldReturnTrue()
+        {
+            addressBook.CreateAddressBookTable();
+            Person person = new Person("Sonal", "Karle", "Ghatkopar", "Mumbai", "Maharashtra","400 075", "91 2837373737", "sonal@gmail.com");
+            DataRow result = addressBook.AddContact(person);
+            DataRow row = addressBook.AddressBook.NewRow();
+            row["FirstName"] = "Sonal";
+            row["LastName"] = "Karle";
+            row["Address"] = "Ghatkopar";
+            row["City"] = "Mumabi";
+            row["State"] = "Maharshtra";
+            row["Zip"] = "400 075";
+            row["PhoneNumber"] = "91 2837373737";
+            row["Email"] = "sonal@gmail.com";
+
+            Assert.AreEqual(row["FirstName"], result["FirstName"]);
         }
     }
 }
