@@ -7,62 +7,60 @@ namespace AddressBookLinq
 {
     public class AddressBookService
     {
-        private DataSet AddressBookDB = new DataSet("AddressBookService");
+        /// <summary>
+        /// UC1: Ability to create database
+        /// </summary>
+        private readonly DataSet AddressBookDB = new DataSet("AddressBookService");
         public DataTable AddressBook;
-        public DataTable CreateAddressBookTable()
+        /// <summary>
+        /// UC2:AAbility to create table 
+        /// </summary>
+        public AddressBookService()
         {
             AddressBook = new DataTable("AddressBook");
-            DataColumn column;
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "FirstName";
-            AddressBook.Columns.Add(column);
+            PersonType = new DataTable("ContactType");
+            Type = new DataTable("Type");
 
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "LastName";
-            AddressBook.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Address";
-            AddressBook.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "City";
-            AddressBook.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "State";
-            AddressBook.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Zip";
-            AddressBook.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "PhoneNumber";
-            AddressBook.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Email";
-            AddressBook.Columns.Add(column);
+            AddressBook.Columns.Add("FirstName", typeof(string));
+            AddressBook.Columns.Add("LastName", typeof(string));
+            AddressBook.Columns.Add("Address", typeof(string));
+            AddressBook.Columns.Add("City", typeof(string));
+            AddressBook.Columns.Add("State", typeof(string));
+            AddressBook.Columns.Add("Zip", typeof(string));
+            AddressBook.Columns.Add("PhoneNumber", typeof(string));
+            AddressBook.Columns.Add("Email", typeof(string));
+            AddressBook.Columns.Add("Name", typeof(string));
+            AddressBook.PrimaryKey = new DataColumn[] { AddressBook.Columns["Name"] };
             AddressBookDB.Tables.Add(AddressBook);
-            return AddressBook;
         }
+        /// <summary>
+        /// Prints the table.
+        /// </summary>
+        public void PrintTable(DataTable dataTable)
+        {
+            foreach (DataRow row in dataTable.Rows)
+            {
+                foreach (DataColumn column in dataTable.Columns)
+                {
+                    Console.WriteLine(column.ColumnName + " : " + row[column] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+        /// <summary>
+        /// UC 3: Adds the contact.
+        /// </summary>
 
         public DataRow AddContact(Person person)
         {
+            string Name = person.FirstName + " " + person.LastName;
             AddressBook.Rows.Add(person.FirstName, person.LastName,
-                person.Address, person.City, person.State, person.Zip, person.PhoneNumber, person.Email);
-            return AddressBook.Rows[AddressBook.Rows.Count - 1];
+                person.Address, person.City, person.State, person.Zip, person.PhoneNumber, person.Email, Name);
+                 return AddressBook.Rows[^1];
         }
 
-        
+
+
+
     }
 }

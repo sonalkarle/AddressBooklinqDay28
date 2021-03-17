@@ -13,30 +13,26 @@ namespace NUnitTestProject
             addressBook = new AddressBookService();
         }
 
+        /// <summary>
+        /// UC-3 Givens the contact when added should return row.
+        /// </summary>
         [Test]
-        public void GivenTable_WhenChecked_ShouldRetunrTable()
+        public void GivenContact_WhenAdded_ShouldReturnRow()
         {
-            DataTable result = addressBook.CreateAddressBookTable();
-            Assert.AreEqual(result.TableName, "AddressBook");
-        }
-
-        [Test]
-        public void GivenContact_WhenAdded_ShouldReturnTrue()
-        {
-            addressBook.CreateAddressBookTable();
-            Person person = new Person("Sonal", "Karle", "Ghatkopar", "Mumbai", "Maharashtra","400 075", "91 2837373737", "sonal@gmail.com");
-            DataRow result = addressBook.AddContact(person);
+            Person contact = new Person("Prachi", "Gore", "Shivajinagr", "Pune", "Maharashtra", "411 222", "91 8564123737", "Gore@gmail.com");
+            DataRow result = addressBook.AddContact(contact);
             DataRow row = addressBook.AddressBook.NewRow();
-            row["FirstName"] = "Sonal";
-            row["LastName"] = "Karle";
-            row["Address"] = "Ghatkopar";
-            row["City"] = "Mumabi";
-            row["State"] = "Maharshtra";
-            row["Zip"] = "400 075";
-            row["PhoneNumber"] = "91 2837373737";
-            row["Email"] = "sonal@gmail.com";
+            row["FirstName"] = "Prachi";
+            row["LastName"] = "Gore";
+            row["Address"] = "Shivajinagr";
+            row["City"] = "Pune";
+            row["State"] = "Maharashtra";
+            row["Zip"] = "411 222";
+            row["PhoneNumber"] = "91 8564123737";
+            row["Email"] = "Gore@gmail.com";
 
-            Assert.AreEqual(row["FirstName"], result["FirstName"]);
+            Assert.AreEqual(row["State"], result["State"]);
         }
+
     }
 }
