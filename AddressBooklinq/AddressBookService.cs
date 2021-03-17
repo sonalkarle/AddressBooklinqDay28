@@ -8,7 +8,14 @@ namespace AddressBooklinq
 
     public class AddressBook
     {
+        /// <summary>
+        /// UC1: Ability to create database
+        /// </summary>
         private DataSet AddressBookDB;
+
+        /// <summary>
+        /// UC2:AAbility to create table 
+        /// </summary>
         public DataTable CreateAddressBookTable()
         {
             DataTable AddressBook = new DataTable("AddressBook");
@@ -54,6 +61,20 @@ namespace AddressBooklinq
             AddressBook.Columns.Add(column);
 
             return AddressBook;
+        }
+        /// <summary>
+        /// Prints the table.
+        /// </summary>
+        public void PrintTable(DataTable dataTable)
+        {
+            foreach (DataRow row in dataTable.Rows)
+            {
+                foreach (DataColumn column in dataTable.Columns)
+                {
+                    Console.WriteLine(column.ColumnName + " : " + row[column] + " ");
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
